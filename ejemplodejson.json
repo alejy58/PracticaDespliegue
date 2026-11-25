@@ -1,0 +1,9 @@
+{
+  "nombre": "Festival de Invierno",
+  "fecha": "2027-01-15T20:00:00.000Z",
+  "recinto": "6b06d605ef42c5a33fdb88ed",
+  "entradas": [
+    { "tipo": "VIP", "precio": 45, "disponibles": 20 },
+    { "tipo": "General", "precio": 20, "disponibles": 100 }
+  ]
+}
