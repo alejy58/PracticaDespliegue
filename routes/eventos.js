@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     }
     return res.status(200).json({ok: true, data: eventos });
   } catch (err) {
-    res.status(500).json({ ok: false, error: error.message});
+    res.status(500).json({ ok: false, error: err.message});
   }
 });
 
@@ -23,7 +23,7 @@ router.get('/:id', async (req, res) => {
     }
     return res.status(200).json({ok: true, data: evento });
   } catch (err) {
-    res.status(500).json({ ok: false, error: error.message});
+    res.status(500).json({ ok: false, error: err.message});
   }
 });
 router.get('/localidad/:nombre', async (req, res) => {
@@ -38,7 +38,7 @@ router.get('/localidad/:nombre', async (req, res) => {
     }
     return res.status(200).json({ok: true, data: eventos });
   } catch (err) {
-    res.status(500).json({ ok: false, error: error.message});
+    res.status(500).json({ ok: false, error: err.message});
   }
 });
 
@@ -53,9 +53,9 @@ router.get('/entradas/:idEvento/:tipoEntrada', async (req, res) => {
     if(!entrada) {
       return res.status(404).json({ok: false, error: 'No se encontraron entradas de ese tipo para el evento' });
     }
-    return res.status(200).json({ok: true, data: entradas });
+    return res.status(200).json({ok: true, data: entrada });
   } catch (err) {
-    res.status(404).json({ ok: false, error: error.message});
+    res.status(404).json({ ok: false, error: err.message});
   }
 });
 

@@ -11,6 +11,15 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 app.use(express.json());
 
+// Cabeceras CORS: permiten que el front (o cualquier origen) llame a la API
+app.use((req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+  res.set('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+
 app.use('/recintos', recintosRouter);
 app.use('/eventos', eventosRouter);
 
